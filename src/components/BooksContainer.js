@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from './Form';
-import Book from './Book';
+import Book from '../redux/books/Book';
 
 const BooksContainer = () => {
   const books = {

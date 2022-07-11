@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Categories from './components/Categories';
+import Categories from './redux/categories/Categories';
 import BooksContainer from './components/BooksContainer';
 
 const App = () => (
