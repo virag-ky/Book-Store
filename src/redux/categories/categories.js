@@ -1,16 +1,16 @@
-const UNDERCONSTRUCTION = "UNDERCONSTRUCTION";
+const UNDERCONSTRUCTION = 'UNDERCONSTRUCTION';
 
-export default function reducer(state = [], action) {
+const categoriesReducer = (state = [], action) => {
   switch (action.type) {
     case UNDERCONSTRUCTION:
-      return "Under construction";
+      return 'Under construction';
     default:
       return state;
   }
-}
-
-export const checkStatus = () => {
-  return {
-    type: UNDERCONSTRUCTION,
-  };
 };
+
+export const checkStatus = () => ({
+  type: UNDERCONSTRUCTION,
+});
+
+export default categoriesReducer;

@@ -1,10 +1,11 @@
-const ADD = "ADD";
-const REMOVE = "REMOVE";
+const ADD = 'ADD';
+const REMOVE = 'REMOVE';
 
-export default function reducer(state = [], action) {
+const booksReducer = (state = [], action) => {
+  let booksArray;
   switch (action.type) {
     case ADD:
-      let booksArray = [...state, action.book];
+      booksArray = [...state, action.book];
       return booksArray;
     case REMOVE:
       return [
@@ -14,18 +15,16 @@ export default function reducer(state = [], action) {
     default:
       return state;
   }
-}
-
-export const addBook = (book) => {
-  return {
-    type: ADD,
-    book,
-  };
 };
 
-export const removeBook = (index) => {
-  return {
-    type: REMOVE,
-    index,
-  };
-};
+export const addBook = (book) => ({
+  type: ADD,
+  book,
+});
+
+export const removeBook = (index) => ({
+  type: REMOVE,
+  index,
+});
+
+export default booksReducer;
