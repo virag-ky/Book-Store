@@ -23,11 +23,15 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-### Install
+```
+git clone git@github.com:virag-ky/Book-Store.git
+```
 
-### Run tests
+### Install dependencies
 
-### Deployment
+```
+npm install
+```
 
 ## Authors
 
