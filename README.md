@@ -8,6 +8,9 @@
 
 - Create-React-App (CRA)
 - React / JSX
+- Redux
+- JavaScript
+- linters
 
 ## Live Demo
 
@@ -31,6 +34,12 @@ git clone git@github.com:virag-ky/Book-Store.git
 
 ```
 npm install
+```
+
+### Open in the browser
+
+```
+npm start
 ```
 
 ## Authors
