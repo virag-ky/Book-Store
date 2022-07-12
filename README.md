@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Book Store
+# Bookstore
 
 > The Book Store is a website where the user can display a list of books, add a book and remove a selected book.
 
