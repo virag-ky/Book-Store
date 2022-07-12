@@ -1,7 +1,26 @@
-const ADD = 'ADD';
-const REMOVE = 'REMOVE';
+const ADD = "ADD";
+const REMOVE = "REMOVE";
 
-const booksReducer = (state = [], action) => {
+const booksReducer = (
+  state = [
+    {
+      title: "Clean Code",
+      author: "Robert C. Martin",
+      id: 1,
+    },
+    {
+      title: "The Pragmatic Programmer",
+      author: "Andrew Hunt & David Thomas",
+      id: 2,
+    },
+    {
+      title: "The Art of Computer Programming",
+      author: "Donald E. Knuth",
+      id: 3,
+    },
+  ],
+  action
+) => {
   let booksArray;
   switch (action.type) {
     case ADD:
