@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Book Store
+# Bookstore
 
 > The Book Store is a website where the user can display a list of books, add a book and remove a selected book.
 
@@ -8,6 +8,9 @@
 
 - Create-React-App (CRA)
 - React / JSX
+- Redux
+- JavaScript
+- linters
 
 ## Live Demo
 
@@ -31,6 +34,12 @@ git clone git@github.com:virag-ky/Book-Store.git
 
 ```
 npm install
+```
+
+### Open in the browser
+
+```
+npm start
 ```
 
 ## Authors
