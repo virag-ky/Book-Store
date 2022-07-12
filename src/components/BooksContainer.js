@@ -10,8 +10,8 @@ const BooksContainer = () => {
       <ul className="booksContainer">
         {books.map((book) => (
           <Book
-            key={book.id}
-            id={book.id}
+            key={book.title}
+            id={books.indexOf(book) + 1}
             title={book.title}
             author={book.author}
           />

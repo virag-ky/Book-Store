@@ -28,10 +28,14 @@ const booksReducer = (
       booksArray = [...state, action.book];
       return booksArray;
     case REMOVE:
+      if (state.length === 1) {
+        return [];
+      }
       return [
         ...state.slice(0, action.index),
         ...state.slice(action.index + 1, state.length),
       ];
+
     default:
       return state;
   }
