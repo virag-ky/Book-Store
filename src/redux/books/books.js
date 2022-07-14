@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const ADD = 'book-store/books/ADD';
 const REMOVE = 'book-store/books/REMOVE';
@@ -54,7 +53,7 @@ export const addNewBook = (book) => async (dispatch) => {
   dispatch(addBook(book));
 };
 
-export const getBooksToDisplay = createAsyncThunk(GET, async () => {
+export const getBooksToDisplay = () => async (dispatch) => {
   // get books from the server
   const books = await axios.get(baseURL);
   // returns an array of the main object's string-keyed [key, value] pairs
@@ -68,8 +67,8 @@ export const getBooksToDisplay = createAsyncThunk(GET, async () => {
     return { id, title, author };
   });
 
-  return objectOfBooks;
-});
+  dispatch(getBook(objectOfBooks));
+};
 
 export const removeBookFromList = (id) => async (dispatch) => {
   await axios.delete(`${baseURL}/${id}`);
