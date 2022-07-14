@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addNewBook } from '../redux/books/books';
 
 const Form = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
   const dispatch = useDispatch();
 
   const id = useSelector((state) => state.books).length + 1;
 
-  const addNewBook = () => {
-    dispatch(addBook({ title, author, id }));
+  const addBookToList = () => {
+    dispatch(
+      addNewBook({
+        title,
+        author,
+        id,
+        category,
+      }),
+    );
     setTitle('');
     setAuthor('');
+    setCategory('');
   };
 
   const changeTitle = (e) => {
@@ -40,7 +49,7 @@ const Form = () => {
         value={author}
         onChange={changeAuthor}
       />
-      <button type="button" onClick={addNewBook}>
+      <button type="button" onClick={addBookToList}>
         Add Book
       </button>
     </form>
