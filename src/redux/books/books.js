@@ -47,10 +47,29 @@ export const addNewBook = (book) => async (dispatch) => {
     title, author, id, category,
   } = book;
   const newBook = {
-    item_id: id, title, author, category,
+    item_id: id,
+    title,
+    author,
+    category,
   };
   await axios.post(baseURL, newBook);
   dispatch(addBook(book));
+};
+
+export const getBooksToDisplay = () => async (dispatch) => {
+  // get books from the server
+  const books = await axios.get(baseURL);
+  // returns an array of the main object's string-keyed [key, value] pairs
+  /* example: {
+    1: [{title, author}],
+    2: [{title, author}],
+  } */
+  // and returns each book with it's id, title and author
+  const objectOfBooks = Object.entries(books.data).map(([id, book]) => {
+    const { title, author } = book[0];
+    return { id, title, author };
+  });
+  dispatch(getBook(objectOfBooks));
 };
 
 export default booksReducer;
