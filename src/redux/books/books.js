@@ -3,7 +3,7 @@ import axios from 'axios';
 const ADD = 'book-store/books/ADD';
 const REMOVE = 'book-store/books/REMOVE';
 const GET = 'book-store/books/GET';
-const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/1nVmoPNiti78nPEDx5ys/books';
+const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Vl8wfMoyrcKKbzkxfPyY/books';
 
 const booksReducer = (state = [], action) => {
   let booksArray;
@@ -17,11 +17,7 @@ const booksReducer = (state = [], action) => {
       if (state.length === 1) {
         return [];
       }
-      return [
-        ...state.slice(0, action.index),
-        ...state.slice(action.index + 1, state.length),
-      ];
-
+      return state.filter((book) => book.id !== action.index);
     default:
       return state;
   }
@@ -52,6 +48,7 @@ export const addNewBook = (book) => async (dispatch) => {
     author,
     category,
   };
+  // post the new book in the server
   await axios.post(baseURL, newBook);
   dispatch(addBook(book));
 };
@@ -69,7 +66,13 @@ export const getBooksToDisplay = () => async (dispatch) => {
     const { title, author } = book[0];
     return { id, title, author };
   });
+
   dispatch(getBook(objectOfBooks));
+};
+
+export const removeBookFromList = (id) => async (dispatch) => {
+  await axios.delete(`${baseURL}/${id}`);
+  dispatch(removeBook(id));
 };
 
 export default booksReducer;

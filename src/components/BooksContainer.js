@@ -18,7 +18,7 @@ const BooksContainer = () => {
         {books.map((book) => (
           <Book
             key={book.title}
-            id={books.indexOf(book) + 1}
+            id={Number(book.id)}
             title={book.title}
             author={book.author}
           />

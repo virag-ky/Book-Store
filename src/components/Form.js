@@ -11,9 +11,14 @@ const Form = () => {
   const id = useSelector((state) => state.books).length + 1;
 
   const addBookToList = () => {
-    dispatch(addNewBook({
-      title, author, id, category,
-    }));
+    dispatch(
+      addNewBook({
+        title,
+        author,
+        id,
+        category,
+      }),
+    );
     setTitle('');
     setAuthor('');
     setCategory('');
