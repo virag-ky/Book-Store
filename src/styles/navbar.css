@@ -1,8 +1,7 @@
 h1 {
-  font-family: 'Montserrat', sans-serif;
   color: #0290ff;
   font-weight: 700;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
 }
 
 nav {
@@ -29,7 +28,6 @@ nav {
 
 .navLinks > li {
   list-style: none;
-  font-family: 'Montserrat', sans-serif;
   letter-spacing: 1.9px;
   font-size: 1.1rem;
 }

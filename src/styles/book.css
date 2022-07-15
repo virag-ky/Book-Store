@@ -1,0 +1,61 @@
+.book {
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 35px 25px;
+  height: 185px;
+}
+
+.bookInfo {
+  width: 25%;
+  word-break: break-all;
+  overflow:auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buttonsDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.bookButtons {
+  border: none;
+  background: transparent;
+  font-family: 'Roboto Slab', serif;;
+  color: #85a7c5;
+  font-size: 0.9rem;
+}
+
+.bookButtons:hover {
+  cursor: pointer;
+}
+
+.divider {
+  width: 1px;
+  height: 25px;
+  background: #e8e8e8;
+}
+
+.category {
+  color: #918f8f;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-family: 'Roboto Slab', serif;
+  color: #121212;
+  letter-spacing: -0.5px;
+}
+
+.author {
+  font-family: 'Roboto Slab', serif;
+  color: #85a7c5;
+  font-weight: 100;
+  font-size: 0.9rem;
+}

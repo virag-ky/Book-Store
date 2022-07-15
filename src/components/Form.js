@@ -6,7 +6,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { addNewBook } from '../redux/books/books';
 
 const categories = [
-  'Category',
+  'Computer Programming',
   'Action',
   'Adventure',
   'Fantasy',
@@ -18,7 +18,6 @@ const categories = [
   'Sci-Fi',
   'Humor',
   'Tragedy',
-  'Computer Programming',
   'Documentary',
 ];
 
