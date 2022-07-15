@@ -1,21 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
+import '../styles/navbar.css';
 
 const Navbar = () => (
   <nav>
-    <h1>Bookstore CMS</h1>
-    <ul>
-      <li>
-        <Link to="/">Books</Link>
-      </li>
-      <li>
-        <Link to="/categories">Categories</Link>
-      </li>
-    </ul>
+    <div className="navLinksContainer">
+      <h1>Bookstore CMS</h1>
+      <ul className="navLinks">
+        <li>
+          <Link to="/">BOOKS</Link>
+        </li>
+        <li>
+          <Link to="/categories">CATEGORIES</Link>
+        </li>
+      </ul>
+    </div>
     <Avatar
       src="/broken-image.jpg"
-      sx={{ bgcolor: '#fff', color: '#0290ff', border: 'thin solid #e8e8e8' }}
+      sx={{
+        bgcolor: '#fff',
+        color: '#0290ff',
+        border: 'thin solid #e8e8e8',
+        width: '50px',
+        height: '50px',
+      }}
+      className="avatar"
     />
   </nav>
 );
