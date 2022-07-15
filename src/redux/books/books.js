@@ -39,9 +39,11 @@ export const getBook = (book) => ({
 });
 
 export const addNewBook = (book) => async (dispatch) => {
+  // get these from the 'book' parameter
   const {
     title, author, id, category,
   } = book;
+  // create a new book with these keys
   const newBook = {
     item_id: id,
     title,
@@ -63,7 +65,9 @@ export const getBooksToDisplay = () => async (dispatch) => {
   } */
   // and returns each book with it's id, title and author
   const objectOfBooks = Object.entries(books.data).map(([id, book]) => {
+    // get these from the book parameter
     const { title, author } = book[0];
+    // return only these
     return { id, title, author };
   });
 
@@ -71,6 +75,7 @@ export const getBooksToDisplay = () => async (dispatch) => {
 };
 
 export const removeBookFromList = (id) => async (dispatch) => {
+  // delete a book from the server
   await axios.delete(`${baseURL}/${id}`);
   dispatch(removeBook(id));
 };

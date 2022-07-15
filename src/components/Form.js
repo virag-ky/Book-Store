@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addNewBook } from '../redux/books/books';
+import MultipleSelect from './selectCategories';
 
 const Form = () => {
   const [title, setTitle] = useState('');
@@ -49,6 +50,7 @@ const Form = () => {
         value={author}
         onChange={changeAuthor}
       />
+      <MultipleSelect />
       <button type="button" onClick={addBookToList}>
         Add Book
       </button>
