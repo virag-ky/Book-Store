@@ -21,6 +21,7 @@ const BooksContainer = () => {
             id={Number(book.id)}
             title={book.title}
             author={book.author}
+            category={book.category}
           />
         ))}
       </ul>

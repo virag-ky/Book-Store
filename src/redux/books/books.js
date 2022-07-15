@@ -66,9 +66,11 @@ export const getBooksToDisplay = () => async (dispatch) => {
   // and returns each book with it's id, title and author
   const objectOfBooks = Object.entries(books.data).map(([id, book]) => {
     // get these from the book parameter
-    const { title, author } = book[0];
+    const { title, author, category } = book[0];
     // return only these
-    return { id, title, author };
+    return {
+      id, title, author, category,
+    };
   });
 
   dispatch(getBook(objectOfBooks));
