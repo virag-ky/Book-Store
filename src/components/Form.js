@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { addNewBook } from '../redux/books/books';
+import '../styles/form.css';
 
 const categories = [
   'Computer Programming',
@@ -54,48 +55,53 @@ const Form = () => {
 
   return (
     <form>
-      <h2>ADD NEW BOOK</h2>
-      <TextField
-        helperText=" "
-        id="demo-helper-text-aligned-no-helper"
-        label="Book title"
-        placeholder="Book title"
-        name="title"
-        value={title}
-        onChange={changeTitle}
-      />
-      <TextField
-        helperText=" "
-        id="demo-helper-text-aligned-no-helper"
-        label="Author"
-        placeholder="Author"
-        name="author"
-        value={author}
-        onChange={changeAuthor}
-      />
-      <div>
-        <Autocomplete
-          value={categoryName}
-          onChange={(event, newValue) => {
-            setCategoryName(newValue);
-          }}
-          inputValue={inputValue}
-          onInputChange={(event, newInputValue) => {
-            setInputValue(newInputValue);
-          }}
-          id="controllable-states-demo"
-          options={categories}
-          sx={{ width: 300 }}
-          /* eslint-disable */
-          renderInput={(params) => (
-            <TextField {...params} placeholder="Category" />
-          )}
-          /* eslint-enable */
+      <div className="componentDivider" />
+      <h2 className="addBook">ADD NEW BOOK</h2>
+      <div className="inputsContainer">
+        <TextField
+          helperText=" "
+          id="demo-helper-text-aligned-no-helper"
+          label="Book title"
+          placeholder="Book title"
+          name="title"
+          value={title}
+          onChange={changeTitle}
+          className="inputs"
         />
+        <TextField
+          helperText=" "
+          id="demo-helper-text-aligned-no-helper"
+          label="Author"
+          placeholder="Author"
+          name="author"
+          value={author}
+          onChange={changeAuthor}
+          className="inputs"
+        />
+        <div>
+          <Autocomplete
+            value={categoryName}
+            onChange={(event, newValue) => {
+              setCategoryName(newValue);
+            }}
+            inputValue={inputValue}
+            onInputChange={(event, newInputValue) => {
+              setInputValue(newInputValue);
+            }}
+            id="controllable-states-demo"
+            options={categories}
+            sx={{ width: 300 }}
+            /* eslint-disable */
+            renderInput={(params) => (
+              <TextField {...params} placeholder="Category" />
+            )}
+            /* eslint-enable */
+          />
+        </div>
+        <button type="button" onClick={addBookToList} className="addBookBtn">
+          ADD BOOK
+        </button>
       </div>
-      <button type="button" onClick={addBookToList}>
-        Add Book
-      </button>
     </form>
   );
 };

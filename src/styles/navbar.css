@@ -41,10 +41,6 @@ nav {
   color: rgba(128, 126, 126, 0.7);
 }
 
-.navLinks {
-  display: flex;
-}
-
 .avatar:hover {
   cursor: pointer;
 }

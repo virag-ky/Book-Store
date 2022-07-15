@@ -13,7 +13,7 @@
   width: 25%;
   height: 100%;
   word-break: break-all;
-  overflow:auto;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,7 +28,7 @@
 .bookButtons {
   border: none;
   background: transparent;
-  font-family: 'Roboto Slab', serif;;
+  font-family: 'Roboto Slab', serif;
   color: #85a7c5;
   font-size: 0.9rem;
 }
@@ -113,7 +113,7 @@ span {
   border-radius: 3px;
   background: #0290ff;
   border: none;
-  color: rgba(250, 250, 250, .8);
+  color: rgba(250, 250, 250, 0.8);
   font-family: 'Roboto Slab', serif;
   padding: 8px 20px;
 }
