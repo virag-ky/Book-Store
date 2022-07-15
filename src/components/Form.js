@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { v4 as uuidv4 } from 'uuid';
 import { addNewBook } from '../redux/books/books';
 
 const Form = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  // const [category, setCategory] = useState('');
   const [categoryName, setCategoryName] = useState([]);
   const theme = useTheme();
   const dispatch = useDispatch();
 
-  const id = useSelector((state) => state.books).length + 1;
+  const id = uuidv4();
 
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
@@ -44,13 +44,12 @@ const Form = () => {
         title,
         author,
         id,
-        categoryName,
+        category: categoryName.join(''),
       }),
     );
     setTitle('');
     setAuthor('');
     setCategoryName([]);
-    // setCategory('');
   };
 
   const categories = [
@@ -83,7 +82,7 @@ const Form = () => {
     } = event;
     setCategoryName(
       // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',').join('') : value,
+      typeof value === 'string' ? value.split(',') : value,
     );
   };
 
@@ -105,12 +104,7 @@ const Form = () => {
         onChange={changeAuthor}
       />
       <div>
-        <FormControl
-          sx={{ m: 1, width: 300 }}
-          categoryName={categoryName}
-          categories={categories}
-          handleChange={handleChange}
-        >
+        <FormControl sx={{ m: 1, width: 300 }}>
           <InputLabel id="demo-multiple-name-label">Category</InputLabel>
           <Select
             labelId="demo-multiple-name-label"
