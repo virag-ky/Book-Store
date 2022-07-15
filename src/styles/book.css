@@ -4,12 +4,14 @@
   list-style: none;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 35px 25px;
   height: 185px;
 }
 
 .bookInfo {
   width: 25%;
+  height: 100%;
   word-break: break-all;
   overflow:auto;
   display: flex;
@@ -58,4 +60,64 @@
   color: #85a7c5;
   font-weight: 100;
   font-size: 0.9rem;
+}
+
+.bookStats {
+  display: flex;
+  gap: 100px;
+  width: 55%;
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.percentage {
+  font-weight: normal;
+  font-size: 2.4rem;
+}
+
+span {
+  color: #918f8f;
+  font-size: 0.9rem;
+}
+
+.bookDivider {
+  width: 2px;
+  height: 80px;
+  background: #e8e8e8;
+}
+
+.chaptersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.currentChapter {
+  font-family: 'Roboto Slab', serif;
+  color: #918f8f;
+  font-weight: normal;
+  font-size: 0.8rem;
+}
+
+.chapter {
+  font-family: 'Roboto Slab', serif;
+  font-weight: normal;
+  margin-top: -10px;
+}
+
+.updateProgress {
+  border-radius: 3px;
+  background: #0290ff;
+  border: none;
+  color: rgba(250, 250, 250, .8);
+  font-family: 'Roboto Slab', serif;
+  padding: 8px 20px;
+}
+
+.updateProgress:hover {
+  cursor: pointer;
 }

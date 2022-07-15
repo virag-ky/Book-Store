@@ -7,7 +7,7 @@ import '../styles/book.css';
 
 function CircularProgressWithLabel(props) {
   /* eslint-disable */
-  return <CircularProgress variant="determinate" {...props} />;
+  return <CircularProgress variant="determinate" {...props} size={"80px"} />;
   /* eslint-enable */
 }
 
@@ -68,26 +68,28 @@ const Book = ({
           </button>
         </div>
       </div>
-      <div className="progressContainer">
-        <CircularStatic />
-        <div className="completedProgress">
-          <h2>
-            {Math.floor(Math.random() * 101)}
-            %
-          </h2>
-          <span>Completed</span>
+      <div className="bookStats">
+        <div className="progressContainer">
+          <CircularStatic />
+          <div className="completedProgress">
+            <h2 className="percentage">
+              {Math.floor(Math.random() * 101)}
+              %
+            </h2>
+            <span>Completed</span>
+          </div>
         </div>
-      </div>
-      <div className="bookDivider" />
-      <div className="chaptersContainer">
-        <h3>CURRENT CHAPTER</h3>
-        <h3>
-          Chapter
-          {Math.floor(Math.random() * 101)}
-        </h3>
-        <button type="button" className="updateProgress">
-          UPDATE PROGRESS
-        </button>
+        <div className="bookDivider" />
+        <div className="chaptersContainer">
+          <h3 className="currentChapter">CURRENT CHAPTER</h3>
+          <h3 className="chapter">
+            Chapter
+            {Math.floor(Math.random() * 101)}
+          </h3>
+          <button type="button" className="updateProgress">
+            UPDATE PROGRESS
+          </button>
+        </div>
       </div>
     </li>
   );
