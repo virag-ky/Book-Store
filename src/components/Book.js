@@ -1,7 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import CircularProgress from '@mui/material/CircularProgress';
 import { removeBookFromList } from '../redux/books/books';
+
+function CircularProgressWithLabel(props) {
+  /* eslint-disable */
+  return <CircularProgress variant="determinate" {...props} />;
+  /* eslint-enable */
+}
+
+export function CircularStatic() {
+  const [progress, setProgress] = React.useState(0);
+
+  React.useEffect(() => {
+    setProgress(75);
+  }, []);
+
+  return <CircularProgressWithLabel value={progress} />;
+}
 
 const Book = ({
   title, author, id, category,
@@ -22,6 +39,9 @@ const Book = ({
           Remove
         </button>
         <button type="button">Edit</button>
+      </div>
+      <div className="progressContainer">
+        <CircularStatic />
       </div>
     </li>
   );

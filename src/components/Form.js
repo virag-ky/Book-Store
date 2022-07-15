@@ -1,32 +1,32 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
-import { addNewBook } from "../redux/books/books";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import { addNewBook } from '../redux/books/books';
 
 const categories = [
-  "Category",
-  "Action",
-  "Adventure",
-  "Fantasy",
-  "Horror",
-  "Classic",
-  "History",
-  "Detective and Mystery",
-  "Romance",
-  "Sci-Fi",
-  "Humor",
-  "Tragedy",
-  "Computer Programming",
-  "Documentary",
+  'Category',
+  'Action',
+  'Adventure',
+  'Fantasy',
+  'Horror',
+  'Classic',
+  'History',
+  'Detective and Mystery',
+  'Romance',
+  'Sci-Fi',
+  'Humor',
+  'Tragedy',
+  'Computer Programming',
+  'Documentary',
 ];
 
 const Form = () => {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [categoryName, setCategoryName] = useState("");
-  const [inputValue, setInputValue] = useState("");
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [categoryName, setCategoryName] = useState('');
+  const [inputValue, setInputValue] = useState('');
   const dispatch = useDispatch();
 
   const id = uuidv4();
@@ -38,11 +38,11 @@ const Form = () => {
         author,
         id,
         category: categoryName,
-      })
+      }),
     );
-    setTitle("");
-    setAuthor("");
-    setCategoryName("");
+    setTitle('');
+    setAuthor('');
+    setCategoryName('');
   };
 
   const changeTitle = (e) => {

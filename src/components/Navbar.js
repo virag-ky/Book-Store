@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Avatar from '@mui/material/Avatar';
 
 const Navbar = () => (
   <nav>
@@ -12,7 +13,10 @@ const Navbar = () => (
         <Link to="/categories">Categories</Link>
       </li>
     </ul>
-    <img alt="" />
+    <Avatar
+      src="/broken-image.jpg"
+      sx={{ bgcolor: '#fff', color: '#0290ff', border: 'thin solid #e8e8e8' }}
+    />
   </nav>
 );
 
