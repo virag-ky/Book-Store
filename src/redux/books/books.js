@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const ADD = 'book-store/books/ADD';
 const REMOVE = 'book-store/books/REMOVE';
@@ -40,9 +39,11 @@ export const getBook = (book) => ({
 });
 
 export const addNewBook = (book) => async (dispatch) => {
+  // get these from the 'book' parameter
   const {
     title, author, id, category,
   } = book;
+  // create a new book with these keys
   const newBook = {
     item_id: id,
     title,
@@ -54,7 +55,7 @@ export const addNewBook = (book) => async (dispatch) => {
   dispatch(addBook(book));
 };
 
-export const getBooksToDisplay = createAsyncThunk(GET, async () => {
+export const getBooksToDisplay = () => async (dispatch) => {
   // get books from the server
   const books = await axios.get(baseURL);
   // returns an array of the main object's string-keyed [key, value] pairs
@@ -64,14 +65,19 @@ export const getBooksToDisplay = createAsyncThunk(GET, async () => {
   } */
   // and returns each book with it's id, title and author
   const objectOfBooks = Object.entries(books.data).map(([id, book]) => {
-    const { title, author } = book[0];
-    return { id, title, author };
+    // get these from the book parameter
+    const { title, author, category } = book[0];
+    // return only these
+    return {
+      id, title, author, category,
+    };
   });
 
-  return objectOfBooks;
-});
+  dispatch(getBook(objectOfBooks));
+};
 
 export const removeBookFromList = (id) => async (dispatch) => {
+  // delete a book from the server
   await axios.delete(`${baseURL}/${id}`);
   dispatch(removeBook(id));
 };

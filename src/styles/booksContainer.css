@@ -1,0 +1,6 @@
+.booksContainer {
+  margin: 50px 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

@@ -1,14 +1,35 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 import { addNewBook } from '../redux/books/books';
+import '../styles/form.css';
+
+const categories = [
+  'Computer Programming',
+  'Action',
+  'Adventure',
+  'Fantasy',
+  'Horror',
+  'Classic',
+  'History',
+  'Detective and Mystery',
+  'Romance',
+  'Sci-Fi',
+  'Humor',
+  'Tragedy',
+  'Documentary',
+];
 
 const Form = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('');
+  const [categoryName, setCategoryName] = useState('');
+  const [inputValue, setInputValue] = useState('');
   const dispatch = useDispatch();
 
-  const id = useSelector((state) => state.books).length + 1;
+  const id = uuidv4();
 
   const addBookToList = () => {
     dispatch(
@@ -16,12 +37,12 @@ const Form = () => {
         title,
         author,
         id,
-        category,
+        category: categoryName,
       }),
     );
     setTitle('');
     setAuthor('');
-    setCategory('');
+    setCategoryName('');
   };
 
   const changeTitle = (e) => {
@@ -34,24 +55,53 @@ const Form = () => {
 
   return (
     <form>
-      <h2>ADD NEW BOOK</h2>
-      <input
-        type="text"
-        placeholder="Book title"
-        name="title"
-        value={title}
-        onChange={changeTitle}
-      />
-      <input
-        type="text"
-        placeholder="Author"
-        name="author"
-        value={author}
-        onChange={changeAuthor}
-      />
-      <button type="button" onClick={addBookToList}>
-        Add Book
-      </button>
+      <div className="componentDivider" />
+      <h2 className="addBook">ADD NEW BOOK</h2>
+      <div className="inputsContainer">
+        <TextField
+          helperText=" "
+          id="demo-helper-text-aligned-no-helper"
+          label="Book title"
+          placeholder="Book title"
+          name="title"
+          value={title}
+          onChange={changeTitle}
+          className="inputs"
+        />
+        <TextField
+          helperText=" "
+          id="demo-helper-text-aligned-no-helper"
+          label="Author"
+          placeholder="Author"
+          name="author"
+          value={author}
+          onChange={changeAuthor}
+          className="inputs"
+        />
+        <div>
+          <Autocomplete
+            value={categoryName}
+            onChange={(event, newValue) => {
+              setCategoryName(newValue);
+            }}
+            inputValue={inputValue}
+            onInputChange={(event, newInputValue) => {
+              setInputValue(newInputValue);
+            }}
+            id="controllable-states-demo"
+            options={categories}
+            sx={{ width: 300 }}
+            /* eslint-disable */
+            renderInput={(params) => (
+              <TextField {...params} placeholder="Category" />
+            )}
+            /* eslint-enable */
+          />
+        </div>
+        <button type="button" onClick={addBookToList} className="addBookBtn">
+          ADD BOOK
+        </button>
+      </div>
     </form>
   );
 };

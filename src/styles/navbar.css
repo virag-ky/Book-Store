@@ -1,0 +1,46 @@
+h1 {
+  color: #0290ff;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+nav {
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 200px;
+  background: #fff;
+}
+
+.navLinksContainer {
+  width: 650px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLinks {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLinks > li {
+  list-style: none;
+  letter-spacing: 1.9px;
+  font-size: 1.1rem;
+}
+
+.navLinks > li > a {
+  text-decoration: none;
+  color: #121212;
+}
+
+.navLinks > li > a:hover {
+  color: rgba(128, 126, 126, 0.7);
+}
+
+.avatar:hover {
+  cursor: pointer;
+}

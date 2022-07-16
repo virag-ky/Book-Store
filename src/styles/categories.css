@@ -1,0 +1,28 @@
+.categoriesPage {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+p {
+  font-size: 2rem;
+}
+
+.checkStatus {
+  border: none;
+  background: #0290ff;
+  font-family: 'Roboto Slab', serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  width: 230px;
+  height: 55px;
+  border-radius: 3px;
+}
+
+.checkStatus:hover {
+  cursor: pointer;
+}
