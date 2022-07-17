@@ -4,3 +4,9 @@
   flex-direction: column;
   gap: 20px;
 }
+
+@media (max-width: 600px) {
+  .booksContainer {
+    margin: 50px 25px;
+  }
+}
