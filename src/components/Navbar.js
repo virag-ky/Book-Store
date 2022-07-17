@@ -6,7 +6,9 @@ import '../styles/navbar.css';
 const Navbar = () => (
   <nav>
     <div className="navLinksContainer">
-      <h1>Bookstore CMS</h1>
+      <h1>
+        <Link to="/">Bookstore CMS</Link>
+      </h1>
       <ul className="navLinks">
         <li>
           <Link to="/">BOOKS</Link>
