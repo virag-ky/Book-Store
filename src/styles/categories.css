@@ -26,3 +26,21 @@ p {
 .checkStatus:hover {
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  p {
+    font-size: 1rem;
+  }
+
+  .checkStatus {
+    border: none;
+    background: #0290ff;
+    font-family: 'Roboto Slab', serif;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+  }
+}

@@ -12,7 +12,7 @@ const Categories = () => {
     <div className="categoriesPage">
       <p>{status}</p>
       <button type="button" onClick={checkForStatus} className="checkStatus">
-        Check status
+        CHECK STATUS
       </button>
     </div>
   );

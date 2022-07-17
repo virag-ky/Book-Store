@@ -44,3 +44,28 @@ nav {
 .avatar:hover {
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    padding: 25px;
+  }
+
+  .navLinksContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: unset;
+  }
+
+  .navLinks {
+    width: 180px;
+  }
+
+  .navLinks > li {
+    font-size: 0.8rem;
+  }
+}
