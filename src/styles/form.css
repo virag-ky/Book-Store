@@ -38,3 +38,27 @@ form {
 .addBookBtn:hover {
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  form {
+    padding: 20px 20px 80px 20px;
+  }
+
+  .addBook {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .inputsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inputs {
+    width: 100%;
+  }
+
+  .addBookBtn {
+    margin-top: 25px;
+  }
+}
